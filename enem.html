@@ -37,8 +37,23 @@
 <label for="email">Email:</label><br>
 <input type="email" id="email" name="email" size="40"><br><br>
 
-<label for="email">selecione sua instituição de ensino</label><br>
-<input type="email" id="email" name="email" size="40"><br><br>
+<label for="email">selecione sua instituição de ensino:</label><br>
+<select name="ensino" id="ensino">
+<optgroup label="escolas publicas"> 
+    <option value="colegio">Colegio Arceburguense</option>
+    <option value="barao">Colegio barao</option>
+    <option value="lucas">Colegio lucas</option>
+</optgroup>
+
+<optgroup label="escolas particulares"> 
+    <option value="ipe">Ipe Amarelo</option>
+    <option value="objetivo">Colegio Objetivo</option>
+    <option value="Funvic">Funvic</option>
+</optgroup>
+
+
+
+</select>
 <hr>
 
 <h3>Biologia</h3>
@@ -72,12 +87,19 @@
 <h3>Matemática</h3>
 
 <p>1) Quanto é 7 x 8?</p>
-<input type="radio" id="mat1a" name="mat1" value="a">
-<label for="mat1a">54</label><br>
-<input type="radio" id="mat1b" name="mat1" value="b">
-<label for="mat1b">56</label><br>
-<input type="radio" id="mat1c" name="mat1" value="c">
-<label for="mat1c">64</label><br><br>
+<label for="mat">selecione a resposta</label><br>
+<select name="mat" id="mat">
+<optgroup label="numeros positivos"> 
+    <option value="n1">56</option>
+    <option value="n2">50</option>
+    <option value="n3">12</option>
+</optgroup>
+<optgroup label="numeros negativos"> 
+    <option value="n4">-56</option>
+    <option value="n5">-5</option>
+    <option value="n6">-1</option>
+</optgroup>
+</select>
 
 <p>2) A raiz quadrada de 49 é:</p>
 <input type="radio" id="mat2a" name="mat2" value="a">
@@ -128,12 +150,19 @@
 <h3>História</h3>
 
 <p>1) O Brasil foi colonizado por:</p>
-<input type="radio" id="hist1a" name="hist1" value="a">
-<label for="hist1a">Espanha</label><br>
-<input type="radio" id="hist1b" name="hist1" value="b">
-<label for="hist1b">Portugal</label><br>
-<input type="radio" id="hist1c" name="hist1" value="c">
-<label for="hist1c">França</label><br><br>
+<label for="historia">selecione a resposta</label><br>
+<select name="his" id="his">
+<optgroup label="paises orientais"> 
+    <option value="p1">Japão</option>
+    <option value="p2">Bangladesh</option>
+    <option value="p3">Tailandia</option>
+</optgroup>
+<optgroup label="Paises ocidentais"> 
+    <option value="p4">Portugal</option>
+    <option value="p5">Suiça</option>
+    <option value="p6">Brasil</option>
+</optgroup>
+</select>
 
 <p>2) A Independência do Brasil ocorreu em:</p>
 <input type="radio" id="hist2a" name="hist2" value="a">
