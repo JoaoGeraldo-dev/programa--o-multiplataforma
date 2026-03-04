@@ -6,139 +6,131 @@
 </head>
 <body>
 
-<h2>Formulário para ENEM</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulário ENEM</title>
+</head>
+
+<body>
+
+<h2 align="center">Formulário para ENEM</h2>
 
 <form>
 
-    <h3>1º Dados Pessoais</h3>
+<table align="center" border="1" width="700" cellpadding="10">
 
-    Nome: <input type="text" name="nome"><br><br>
-    Data de Nascimento: <input type="date" name="data_nascimento"><br><br>
-    Idade: <input type="text" name="idade"><br><br>
-    Telefone: <input type="text" name="telefone"><br><br>
-    CPF: <input type="text" name="cpf"><br><br>
-    Email: <input type="email" name="email"><br><br>
+<tr>
+<td>
 
-<form>
+<h3>1º Dados Pessoais</h3>
 
+<label for="nome">Nome:</label><br>
+<input type="text" id="nome" name="nome" size="50"><br><br>
+
+<label for="data_nascimento">Data de Nascimento:</label><br>
+<input type="date" id="data_nascimento" name="data_nascimento"><br><br>
+
+<label for="idade">Idade:</label><br>
+<input type="number" id="idade" name="idade"><br><br>
+
+<label for="telefone">Telefone:</label><br>
+<input type="tel" id="telefone" name="telefone"><br><br>
+
+<label for="cpf">CPF:</label><br>
+<input type="text" id="cpf" name="cpf"><br><br>
+
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" size="40"><br><br>
+
+<hr>
 
 <h3>Biologia</h3>
 
-<p>1) A fotossíntese ocorre em qual organela?</p>
-<input type="radio" name="bio1"> Mitocôndria<br>
-<input type="radio" name="bio1"> Cloroplasto<br>
-<input type="radio" name="bio1"> Ribossomo<br><br>
+<p>1) Qual é a função do coração?</p>
+<input type="radio" id="bio1a" name="bio1" value="a">
+<label for="bio1a">Produzir hormônios</label><br>
 
-<p>2) O DNA é responsável por:</p>
-<input type="radio" name="bio2"> Respiração<br>
-<input type="radio" name="bio2"> Informação genética<br>
-<input type="radio" name="bio2"> Digestão<br><br>
+<input type="radio" id="bio1b" name="bio1" value="b">
+<label for="bio1b">Bombear sangue</label><br>
 
-<p>3) São exemplos de vertebrados:</p>
-<input type="checkbox" name="bio3"> Cachorro<br>
-<input type="checkbox" name="bio3"> Cobra<br>
-<input type="checkbox" name="bio3"> Minhoca<br><br>
+<input type="radio" id="bio1c" name="bio1" value="c">
+<label for="bio1c">Filtrar o ar</label><br><br>
 
-<p>4) A célula é:</p>
-<input type="radio" name="bio4"> Unidade básica da vida<br>
-<input type="radio" name="bio4"> Um órgão<br>
-<input type="radio" name="bio4"> Um tecido<br><br>
+<p>2) São mamíferos:</p>
+<input type="checkbox" id="bio2a" name="bio2" value="a">
+<label for="bio2a">Baleia</label><br>
 
-<p>5) Fazem parte do sistema respiratório:</p>
-<input type="checkbox" name="bio5"> Pulmões<br>
-<input type="checkbox" name="bio5"> Traqueia<br>
-<input type="checkbox" name="bio5"> Estômago<br><br><hr>
+<input type="checkbox" id="bio2b" name="bio2" value="b">
+<label for="bio2b">Morcego</label><br>
 
+<input type="checkbox" id="bio2c" name="bio2" value="c">
+<label for="bio2c">Galinha</label><br>
 
+<hr>
 
 <h3>Matemática</h3>
 
-<p>1) Quanto é 8 x 7?</p>
-<input type="radio" name="mat1"> 54<br>
-<input type="radio" name="mat1"> 56<br>
-<input type="radio" name="mat1"> 64<br><br>
+<p>1) Quanto é 9 x 6?</p>
+<input type="radio" id="mat1a" name="mat1" value="a">
+<label for="mat1a">54</label><br>
 
-<p>2) A raiz quadrada de 25 é:</p>
-<input type="radio" name="mat2"> 3<br>
-<input type="radio" name="mat2"> 5<br>
-<input type="radio" name="mat2"> 7<br><br>
+<input type="radio" id="mat1b" name="mat1" value="b">
+<label for="mat1b">56</label><br>
 
-<p>3) São números pares:</p>
-<input type="checkbox" name="mat3"> 2<br>
-<input type="checkbox" name="mat3"> 5<br>
-<input type="checkbox" name="mat3"> 8<br><br>
+<input type="radio" id="mat1c" name="mat1" value="c">
+<label for="mat1c">64</label><br><br>
 
-<p>4) 10 + 15 é:</p>
-<input type="radio" name="mat4"> 20<br>
-<input type="radio" name="mat4"> 25<br>
-<input type="radio" name="mat4"> 30<br><br>
+<p>2) São múltiplos de 5:</p>
+<input type="checkbox" id="mat2a" name="mat2" value="a">
+<label for="mat2a">10</label><br>
 
-<p>5) São múltiplos de 3:</p>
-<input type="checkbox" name="mat5"> 6<br>
-<input type="checkbox" name="mat5"> 9<br>
-<input type="checkbox" name="mat5"> 10<br><br><hr>
+<input type="checkbox" id="mat2b" name="mat2" value="b">
+<label for="mat2b">15</label><br>
 
+<input type="checkbox" id="mat2c" name="mat2" value="c">
+<label for="mat2c">18</label><br>
 
+<hr>
 
 <h3>Português</h3>
 
-<p>1) Substantivo é:</p>
-<input type="radio" name="port1"> Palavra que nomeia<br>
-<input type="radio" name="port1"> Palavra que liga frases<br>
-<input type="radio" name="port1"> Palavra que indica ação<br><br>
+<p>1) Verbo indica:</p>
+<input type="radio" id="port1a" name="port1" value="a">
+<label for="port1a">Ação</label><br>
 
-<p>2) Verbo indica:</p>
-<input type="radio" name="port2"> Ação<br>
-<input type="radio" name="port2"> Lugar<br>
-<input type="radio" name="port2"> Cor<br><br>
+<input type="radio" id="port1b" name="port1" value="b">
+<label for="port1b">Cor</label><br>
 
-<p>3) São adjetivos:</p>
-<input type="checkbox" name="port3"> Bonito<br>
-<input type="checkbox" name="port3"> Azul<br>
-<input type="checkbox" name="port3"> Correr<br><br>
+<input type="radio" id="port1c" name="port1" value="c">
+<label for="port1c">Objeto</label><br><br>
 
-<p>4) O sujeito é:</p>
-<input type="radio" name="port4"> Quem pratica a ação<br>
-<input type="radio" name="port4"> O verbo<br>
-<input type="radio" name="port4"> O tempo verbal<br><br>
-
-<p>5) São pronomes:</p>
-<input type="checkbox" name="port5"> Ele<br>
-<input type="checkbox" name="port5"> Nós<br>
-<input type="checkbox" name="port5"> Casa<br><br><hr>
-
-
+<hr>
 
 <h3>História</h3>
 
-<p>1) O Brasil foi colonizado por:</p>
-<input type="radio" name="hist1"> Espanha<br>
-<input type="radio" name="hist1"> Portugal<br>
-<input type="radio" name="hist1"> França<br><br>
+<p>1) A Independência do Brasil aconteceu em:</p>
+<input type="radio" id="hist1a" name="hist1" value="a">
+<label for="hist1a">1500</label><br>
 
-<p>2) A Independência do Brasil ocorreu em:</p>
-<input type="radio" name="hist2"> 1500<br>
-<input type="radio" name="hist2"> 1822<br>
-<input type="radio" name="hist2"> 1889<br><br>
+<input type="radio" id="hist1b" name="hist1" value="b">
+<label for="hist1b">1822</label><br>
 
-<p>3) Foram presidentes do Brasil:</p>
-<input type="checkbox" name="hist3"> Getúlio Vargas<br>
-<input type="checkbox" name="hist3"> Dom Pedro II<br>
-<input type="checkbox" name="hist3"> Juscelino Kubitschek<br><br>
+<input type="radio" id="hist1c" name="hist1" value="c">
+<label for="hist1c">1889</label><br><br>
 
-<p>4) A Revolução Francesa aconteceu em:</p>
-<input type="radio" name="hist4"> 1789<br>
-<input type="radio" name="hist4"> 1888<br>
-<input type="radio" name="hist4"> 1964<br><br>
+<hr>
 
-<p>5) São períodos da história:</p>
-<input type="checkbox" name="hist5"> Idade Média<br>
-<input type="checkbox" name="hist5"> Idade Moderna<br>
-<input type="checkbox" name="hist5"> Idade Digital<br><br>
+<center>
+<input type="submit" value="Enviar Prova">
+<input type="reset" value="Limpar Respostas">
+</center>
 
-<br>
-<input type="submit" value="Enviar">
-<input type="reset" value="Limpar">
+</td>
+</tr>
+
+</table>
 
 </form>
 
