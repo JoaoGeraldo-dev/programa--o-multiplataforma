@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "type": "Live Preview",
+            "workspacePath": "c:\\Users\\Marta\\Documents\\GitHub\\JAVA\\treinoProva\\programa--o-multiplataforma",
+            "problemMatcher": [],
+            "label": "Live Preview: Run Server"
+        }
+    ]
+}
