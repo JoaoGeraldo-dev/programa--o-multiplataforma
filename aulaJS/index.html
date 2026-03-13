@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo JS</title>
+    <script>
+        function esconderTexto(){
+            document.getElementById('sumir').style.display='none';   
+        }
+
+         function mostrarTexto(){
+           document.getElementById('sumir').style.display='block'; 
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+    <p id="palavra">Texto inicial</p><br>
+    <h1 id="sumir">Ira SUMIR!</h1>
+   
+    <button onclick="esconderTexto()">sumir</button>
+   
+    <button onclick="document.getElementById('palavra').innerHTML = '<b>Texto novo</b>';">OK</button>
+     <button onclick="mostrarTexto()">aparecer</button>
+</body>
+</html>
