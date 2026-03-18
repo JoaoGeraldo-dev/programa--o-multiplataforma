@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script>
-        function controledeTexto(){
+        function controledeTexto(s){
         
-            document.getElementById('palavra').style.display='none';   
-            document.getElementById('palavra').style.display='block'; 
+          document.getElementById('palavra').style.display = s;   
+           
         }
 
 
@@ -17,7 +17,7 @@
 <body>
     <p id="palavra">Texto inicial</p><br>
 
-     <button onclick="controledeTexto()">sumir aparecer</button>
-     
+     <button onclick="controledeTexto('none')">sumir </button>
+     <button onclick="controledeTexto('')">aparecer </button>
 </body>
 </html>
