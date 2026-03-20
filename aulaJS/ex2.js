@@ -9,8 +9,10 @@ function opcao(){
         document.getElementById("respostas").innerHTML = "digite os numeros para a exponensiação de 2 numero: <br> <input type='Number' id='exp1'> <br> <input type='Number' id='exp2'> <input type='button' value='calcular'> <br><p id='res2'>Resultado: </p> "
         break;
         case "3":
-             document.getElementById("respostas").innerHTML = "Digite o valor de a: <input type='Number' id='a'> <br> Digite o valor de b:<input type='Number' id='b'> <br><br><input type='button' value='calcular'> <br><br><p id='res2'>Resultado: </p> "
-
+             document.getElementById("respostas").innerHTML = "Digite o valor de a: <input type='Number' id='a'> <br> Digite o valor de b:<input type='Number' id='b'> <br><br><input type='button' value='calcular'> <br><br><p id='res3'>Resultado: </p> "
+        break;
+        case "4":
+            alert("SAIU");
     }
 
 }
