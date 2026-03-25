@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ObjetoTeste(){
+            const person = {fname:"jhon", lname:"Doe", age:25};
+
+            let text = "";
+            for(let x in person){
+                text += person[x];
+            }
+
+            console.log(text);
+        }
+
+        function ObjetoTeste2(){
+            const pessoas = [{nome: 'Lucas', idade:45},
+                            {nome:'Aline', idade:20}
+        ];
+
+        let text ="";
+        for(let x in pessoas){
+            text+=pessoas[x].nome+"";
+        }
+          document.getElementById("teste").innerHTML = text;
+    }
+          
+    </script>
+</head>
+<body>
+    <input type="button" value="rodar" onclick="ObjetoTeste2()">
+    <p id="teste"></p>
+</body>
+</html>
