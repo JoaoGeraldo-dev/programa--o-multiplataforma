@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario para enem</title>
+</head>
+<body>
+
+<h1>formulario para enem</h1>
+
+<form id="formEnem">
+
+    <h2>dados pessoais</h2>
+
+    <input type="text" name="nome" placeholder="nome" required><br><br>
+    <input type="date" name="data_nascimento" required><br><br>
+    <input type="number" name="idade" placeholder="idade" required><br><br>
+    <input type="tel" name="telefone" placeholder="telefone" required><br><br>
+    <input type="text" name="cpf" placeholder="cpf" required><br><br>
+    <input type="email" name="email" placeholder="email" required><br><br>
+
+    <h2>materias</h2>
+
+    <h3>ciencias</h3>
+
+    <!--quando value="c", a alternativa é correta. quando value="e", a alternativa é errada-->
+
+    <p>1. Qual é o maior planeta do sistema solar?</p>
+    <label><input type="radio" name="ciencias1" value="c"> Júpiter</label><br>
+    <label><input type="radio" name="ciencias1" value="e"> Terra</label><br>
+    <label><input type="radio" name="ciencias1" value="e"> Marte</label><br><br>
+
+    <p>2. Qual gás é essencial para a fotossíntese das plantas?</p>
+    <label><input type="radio" name="ciencias2" value="c"> Dióxido de carbono</label><br>
+    <label><input type="radio" name="ciencias2" value="e"> Oxigênio</label><br>
+    <label><input type="radio" name="ciencias2" value="e"> Nitrogênio</label><br><br>
+
+    <h3>matematica</h3>
+
+    <p>1. Quanto é 7 + 3?</p>
+    <label><input type="radio" name="matematica1" value="c"> 10</label><br>
+    <label><input type="radio" name="matematica1" value="e"> 9</label><br>
+    <label><input type="radio" name="matematica1" value="e"> 11</label><br><br>
+
+    <p>2. Quanto é 10 / 2?</p>
+    <label><input type="radio" name="matematica2" value="c"> 5</label><br>
+    <label><input type="radio" name="matematica2" value="e"> 4</label><br>
+    <label><input type="radio" name="matematica2" value="e"> 6</label><br><br>
+
+    <p>3. Quanto é 4²?</p>
+    <label><input type="radio" name="matematica3" value="c"> 16</label><br>
+    <label><input type="radio" name="matematica3" value="e"> 14</label><br>
+    <label><input type="radio" name="matematica3" value="e"> 18</label><br><br>
+
+    <h3>portugues</h3>
+
+    <p>1. Qual é o sinônimo de "feliz"?</p>
+    <label><input type="radio" name="portugues1" value="c"> Alegre</label><br>
+    <label><input type="radio" name="portugues1" value="e"> Triste</label><br>
+    <label><input type="radio" name="portugues1" value="e"> Bravo</label><br><br>
+
+    <p>2. Qual é a forma correta: "Ela ___ uma maçã"?</p>
+    <label><input type="radio" name="portugues2" value="c"> Comeu</label><br>
+    <label><input type="radio" name="portugues2" value="e"> Come</label><br>
+    <label><input type="radio" name="portugues2" value="e"> Comer</label><br><br>
+
+    <p>3. Qual é o antônimo de "rápido"?</p>
+    <label><input type="radio" name="portugues3" value="c"> Lento</label><br>
+    <label><input type="radio" name="portugues3" value="e"> Veloz</label><br>
+    <label><input type="radio" name="portugues3" value="e"> Ágil</label><br><br>
+
+    <h3>historia</h3>
+
+    <p>1. Em que ano ocorreu a Independência do Brasil?</p>
+    <label><input type="radio" name="historia1" value="c"> 1822</label><br>
+    <label><input type="radio" name="historia1" value="e"> 1500</label><br>
+    <label><input type="radio" name="historia1" value="e"> 1889</label><br><br>
+
+    <p>2. Quem proclamou a República no Brasil em 1889?</p>
+    <label><input type="radio" name="historia2" value="c"> Marechal Deodoro da Fonseca</label><br>
+    <label><input type="radio" name="historia2" value="e"> Getúlio Vargas</label><br>
+    <label><input type="radio" name="historia2" value="e"> Juscelino Kubitschek</label><br><br>
+
+    <button type="button" onclick="corrigir()">enviar</button>
+
+</form>
+
+<h2 id="resultado"></h2>
+
+<script>
+function corrigir() {
+
+    let resultado = {portugues: 0, matematica: 0, ciencias: 0, historia: 0};
+
+    let perguntas = ["ciencias1","ciencias2","matematica1","matematica2","matematica3","portugues1","portugues2","portugues3","historia1","historia2"];
+
+    for (let i in perguntas) {
+        let nome = perguntas[i];
+        let opcoes = document.getElementsByName(nome);
+        for (let opcao in opcoes) {
+            if (opcoes[opcao].checked) {
+                if (opcoes[opcao].value === "c") {
+                    if (nome.includes("portugues")){
+                        resultado.portugues++;
+                    } else if (nome.includes("matematica")) {
+                        resultado.matematica++;
+                    } else if (nome.includes("ciencias")) {
+                        resultado.ciencias++;
+                    }else if (nome.includes("historia")) {
+                        resultado.historia++;
+                    }
+                }
+            }
+        }
+    }
+
+    let total = resultado.portugues + resultado.matematica + resultado.ciencias + resultado.historia;
+
+    document.getElementById("resultado").innerHTML =
+        "portugues: " + resultado.portugues + "<br>" +
+        "matematica: " + resultado.matematica + "<br>" +
+        "ciencias: " + resultado.ciencias + "<br>" +
+        "historia: " + resultado.historia + "<br><br>" +
+        "total: " + total;
+}
+</script>
+</body>
+</html>
