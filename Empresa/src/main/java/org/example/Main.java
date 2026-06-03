@@ -19,7 +19,9 @@ public class Main {
                                     "2 - CADASTRAR FUNCIONARIO\n" +
                                     "3 - CONSULTAR EMPRESA\n" +
                                     "4 - CONSULTAR FUNCIONARIO\n" +
-                                    "5 - SAIR"
+                                    "5 - ALTERAR EMPRESA\n" +
+                                    "6 - ALTERAR FUNCIONARIO\n" +
+                                    "7 - SAIR"
                     )
             );
 
@@ -89,7 +91,19 @@ public class Main {
 
                     break;
 
+
                 case 5:
+                    Empresa empresaT = new Empresa();
+                    empresaT.setId(
+                            JOptionPane.showInputDialog("Digite o ID da empresa:");
+                    )
+
+                    empresaT.setNome();
+                    empresaT.setLocal();
+                    empresaT.setQtdFunc();
+
+
+                case 6:
 
                     JOptionPane.showMessageDialog(null,
                             "Sistema encerrado!");

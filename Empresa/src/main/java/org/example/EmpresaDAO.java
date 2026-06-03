@@ -82,4 +82,24 @@ public class EmpresaDAO {
                     "Erro: " + e.getMessage());
         }
     }
+
+    public void alterarEmpresa(Empresa empresa) {
+        String sql = "UPDATE empresa SET nome = ?, qtd_func = ?, local = ?, WHERE id = ?";
+
+        try (Connection con = Conexao.conectar();
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            stmt.setString(1, empresa.getNome());
+            stmt.setInt(2, empresa.getQtdFunc());
+            stmt.setString(3, empresa.getLocal());
+            stmt.setInt(4, empresa.getId());
+
+            stmt.executeUpdate();
+
+            System.out.println("Empresa alterada com sucesso!");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     }

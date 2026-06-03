@@ -9,8 +9,7 @@ public class FuncionarioDAO {
 
         Connection con = Conexao.conectar();
 
-        String sql =
-                "INSERT INTO funcionario(nome, data_nascimento, cod_emp) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO funcionario(nome, data_nascimento, cod_emp) VALUES (?, ?, ?)";
 
         try{
 
@@ -34,6 +33,9 @@ public class FuncionarioDAO {
                     "Erro: " + e.getMessage());
         }
     }
+
+
+
 
     public void consultar(){
 
