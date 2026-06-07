@@ -14,7 +14,7 @@ public class Conexao {
 
             String url = "jdbc:mysql://localhost:3306/empresa_db";
             String user = "root";
-            String password = "";
+            String password = "123456";
 
             con = DriverManager.getConnection(url, user, password);
 

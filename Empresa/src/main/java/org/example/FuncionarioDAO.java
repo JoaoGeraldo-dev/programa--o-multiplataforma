@@ -5,13 +5,13 @@ import java.sql.*;
 
 public class FuncionarioDAO {
 
-    public void cadastrar(Funcionario funcionario){
+    public void cadastrar(Funcionario funcionario) {
 
         Connection con = Conexao.conectar();
 
         String sql = "INSERT INTO funcionario(nome, data_nascimento, cod_emp) VALUES (?, ?, ?)";
 
-        try{
+        try {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -21,56 +21,88 @@ public class FuncionarioDAO {
 
             stmt.executeUpdate();
 
-            JOptionPane.showMessageDialog(null,
-                    "Funcionário cadastrado!");
+            JOptionPane.showMessageDialog(null, "Funcionário cadastrado!");
 
             stmt.close();
             con.close();
 
-        } catch (SQLException e){
-
-            JOptionPane.showMessageDialog(null,
-                    "Erro: " + e.getMessage());
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
         }
     }
 
-
-
-
-    public void consultar(){
+    public void consultar() {
 
         Connection con = Conexao.conectar();
 
         String sql = "SELECT * FROM funcionario";
 
-        try{
+        try {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
             ResultSet rs = stmt.executeQuery();
 
-            String dados = "";
+            StringBuilder dados = new StringBuilder();
 
-            while(rs.next()){
-
-                dados +=
-                        "\nID: " + rs.getInt("id") +
-                                "\nNome: " + rs.getString("nome") +
-                                "\nNascimento: " + rs.getString("data_nascimento") +
-                                "\nCódigo Empresa: " + rs.getInt("cod_emp") +
-                                "\n-----------------------";
+            while (rs.next()) {
+                dados.append("\nID: ").append(rs.getInt("id"))
+                        .append("\nNome: ").append(rs.getString("nome"))
+                        .append("\nNascimento: ").append(rs.getString("data_nascimento"))
+                        .append("\nCódigo Empresa: ").append(rs.getInt("cod_emp"))
+                        .append("\n-----------------------");
             }
 
-            JOptionPane.showMessageDialog(null, dados);
+            if (dados.length() > 0) {
+                JOptionPane.showMessageDialog(null, dados.toString());
+            } else {
+                JOptionPane.showMessageDialog(null, "Nenhum funcionário cadastrado!");
+            }
 
             rs.close();
             stmt.close();
             con.close();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        }
+    }
 
-            JOptionPane.showMessageDialog(null,
-                    "Erro: " + e.getMessage());
+    public void alterar(Funcionario funcionario) {
+
+        String sql = "UPDATE funcionario SET nome = ?, data_nascimento = ?, cod_emp = ? WHERE id = ?";
+
+        try (Connection con = Conexao.conectar();
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            stmt.setString(1, funcionario.getNome());
+            stmt.setString(2, funcionario.getDataNascimento());
+            stmt.setInt(3, funcionario.getCodEmp());
+            stmt.setInt(4, funcionario.getId());
+
+            stmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Funcionário alterado com sucesso!");
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        }
+    }
+
+    public void excluir(int id) {
+
+        String sql = "DELETE FROM funcionario WHERE id = ?";
+
+        try (Connection con = Conexao.conectar();
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Funcionário excluído com sucesso!");
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
         }
     }
 }

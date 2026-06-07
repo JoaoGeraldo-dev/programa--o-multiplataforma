@@ -8,13 +8,13 @@ import java.sql.SQLException;
 
 public class EmpresaDAO {
 
-    public void Cadastrar(Empresa empresa){
+    public void Cadastrar(Empresa empresa) {
 
         Connection con = Conexao.conectar();
 
         String sql = "INSERT INTO empresa(nome,qtd_func,local) values (?,?,?)";
 
-        try{
+        try {
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -30,7 +30,7 @@ public class EmpresaDAO {
             stmt.close();
             con.close();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
 
             JOptionPane.showMessageDialog(null,
                     "Erro:" + e.getMessage());
@@ -83,8 +83,10 @@ public class EmpresaDAO {
         }
     }
 
-    public void alterarEmpresa(Empresa empresa) {
-        String sql = "UPDATE empresa SET nome = ?, qtd_func = ?, local = ?, WHERE id = ?";
+    public void Alterar(Empresa empresa) {
+
+        String sql = "UPDATE empresa SET nome = ?, qtd_func = ?, local = ? WHERE id = ?";
+        //                                                            ^ vírgula removida aqui
 
         try (Connection con = Conexao.conectar();
              PreparedStatement stmt = con.prepareStatement(sql)) {
@@ -96,10 +98,27 @@ public class EmpresaDAO {
 
             stmt.executeUpdate();
 
-            System.out.println("Empresa alterada com sucesso!");
+            JOptionPane.showMessageDialog(null, "Empresa alterada com sucesso!");
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
         }
     }
+
+    public void Excluir(int id) {
+
+        String sql = "DELETE FROM empresa WHERE id = ?";
+
+        try (Connection con = Conexao.conectar();
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Empresa excluída com sucesso!");
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        }
     }
+}
