@@ -8,13 +8,14 @@ public class Conexao {
 
     public static Connection conectar(){
 
-        Connection con = null;
+        Connection con;
+        con = null;
 
         try {
 
             String url = "jdbc:mysql://localhost:3306/empresa_db";
             String user = "root";
-            String password = "123456";
+            String password = "";
 
             con = DriverManager.getConnection(url, user, password);
 
