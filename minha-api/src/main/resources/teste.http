@@ -1,0 +1,7 @@
+POST http://localhost:8080/empresas
+Content-Type: application/json
+
+{
+  "nome": "Empresa Teste",
+  "cnpj": "12.345.678/0001-99"
+}
